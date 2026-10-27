@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Edu Fun English</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F5F8FF;
+            color: #18345B;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 7%;
+            background: white;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 52px);
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #EF4444;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 550px;
+        }
+
+        .rocket {
+            font-size: 65px;
+            margin: 15px;
+        }
+
+        .button {
+            border: none;
+            border-radius: 14px;
+            padding: 15px 28px;
+            background: #18345B;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background: #EF4444;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748B;
+            font-size: 13px;
+        }
+    /* MENU KATEGORI LUMI EDU */
+.category-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.category-card {
+    background: white;
+    border: 2px solid #DBEAFE;
+    border-radius: 18px;
+    padding: 22px 12px;
+    color: #18345B;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 12px #18345B12;
+}
+
+.category-card:hover {
+    border-color: #EF4444;
+    transform: translateY(-3px);
+}
+
+.category-card span {
+    display: block;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.category-card small {
+    display: block;
+    margin-top: 6px;
+    color: #64748B;
+    font-weight: normal;
+}
+
+.secondary-button {
+    background: #E8EEFB;
+    color: #18345B;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-top: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}/* DESAIN KARTU LUMI EDU */
+
+#game {
+  background: linear-gradient(135deg, #F3F6FF, #FFF8ED);
+  border-radius: 28px;
+}
+
+#pilihanGame {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px !important;
+  max-width: 800px;
+  margin: 25px auto !important;
+}
+
+#pilihanGame button {
+  width: 100%;
+  min-height: 190px;
+  max-width: 180px;
+  margin: auto;
+  aspect-ratio: 3 / 4;
+  border: 4px solid white !important;
+  border-radius: 22px !important;
+  color: white !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 7px 0 rgba(24,52,91,0.15);
+  transition: transform 0.2s;
+}
+
+#pilihanGame button:nth-child(4n+1) {
+  background: linear-gradient(145deg, #FF8A91, #E84C65) !important;
+}
+
+#pilihanGame button:nth-child(4n+2) {
+  background: linear-gradient(145deg, #65C9F2, #3588E8) !important;
+}
+
+#pilihanGame button:nth-child(4n+3) {
+  background: linear-gradient(145deg, #FFD76A, #F39B38) !important;
+}
+
+#pilihanGame button:nth-child(4n+4) {
+  background: linear-gradient(145deg, #71DDB1, #22A879) !important;
+}
+
+#pilihanGame button:hover {
+  transform: translateY(-6px) rotate(-2deg);
+}
+</style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Logo asli Lumi Edu -->
+        <img
+            src="assets/logo-lumi-edu.jpeg"
+            alt="Logo asli Lumi Edu"
+            class="logo"
+        >
+
+        <h2>Lumi Edu</h2>
+    </header>
+
+    <main class="hero">
+        <div class="rocket">🚀 ⭐</div>
+
+        <h1>
+            Lumi Edu <span>Fun English</span>
+        </h1>
+
+        <p>
+            Learn English Through Play!
+            <br>
+            Yuk, belajar kosakata Bahasa Inggris
+            sambil bermain kartu yang seru!
+        </p>
+
+        <button class="button" onclick="mulaiBelajar()">
+            MULAI BELAJAR ✨
+        </button>
+
+        <div class="info" id="pesan"></div>
+    </main>
+<section id="kategori" class="category-section"
+         style="display: none;">
+
+    <h2>🌟 Pilih Kategori Belajar!</h2>
+    <p>Mau belajar kosakata apa hari ini?</p>
+
+    <div class="category-grid">
+
+        <button class="category-card" onclick="pilihKategori('Animals')">
+            <span>🐶</span> Animals
+            <small>Hewan</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Fruits')">
+            <span>🍎</span> Fruits
+            <small>Buah-buahan</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Colors')">
+            <span>🎨</span> Colors
+            <small>Warna</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Numbers')">
+            <span>🔢</span> Numbers
+            <small>Angka</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Body Parts')">
+            <span>👀</span> Body Parts
+            <small>Anggota tubuh</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Family')">
+            <span>👨‍👩‍👧</span> Family
+            <small>Keluarga</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('School Objects')">
+            <span>✏️</span> School Objects
+            <small>Benda sekolah</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Food and Drinks')">
+            <span>🍔</span> Food &amp; Drinks
+            <small>Makanan dan minuman</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Toys')">
+            <span>🧸</span> Toys
+            <small>Mainan</small>
+        </button>
+
+        <button class="category-card" onclick="pilihKategori('Things Around Us')">
+            <span>🏠</span> Things Around Us
+            <small>Benda di sekitar</small>
+        </button>
+
+    </div>
+
+    <p id="pesanKategori"></p>
+
+    <button class="secondary-button" onclick="kembaliBeranda()">
+        ← Kembali ke Beranda
+    </button>
+
+</section>
+<section id="tutor" style="display:none; max-width:1000px; margin:30px auto; padding:25px 7%; text-align:center; background:#F8FAFF; border-radius:24px;">
+
+    <div style="font-size:48px;">🚀 ⭐</div>
+
+    <h2 id="judulTutor" style="color:#18345B;">
+        Let's Learn Together!
+    </h2>
+
+    <p id="penjelasanTutor">
+        Yuk, belajar Bahasa Inggris bersama Lumi Edu!
+    </p>
+
+    <button type="button" onclick="dengarkanTutor()"
+        style="background:#18345B;color:white;border:none;border-radius:14px;padding:13px 20px;cursor:pointer;">
+        🔊 Dengarkan Tutor
+    </button>
+
+    <p id="pesanAudio"></p>
+
+    <div id="kartuKosakata"
+        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:25px;">
+    </div>
+
+    <button type="button" onclick="mulaiGame()"
+  style="background:#F6C85F;color:#18345B;border:none;
+  border-radius:14px;padding:14px 24px;font-weight:bold;
+  cursor:pointer;margin:12px auto;display:block;">
+  🎴 MULAI BERMAIN!
+</button>
+    <button type="button" onclick="kembaliKeKategori()"
+        style="background:#E8EEFB;color:#18345B;border:none;border-radius:12px;padding:12px 20px;margin-top:24px;cursor:pointer;">
+        ← Kembali ke Kategori
+    </button>
+
+</section>
+   </section>
+
+<!-- TEMPEL KODE GAME KAMU DI SINI -->
+<section id="game" style="display:none; max-width:1000px; margin:30px auto; padding:25px 7%; text-align:center;">
+
+  <h2 style="color:#18345B;">🎴 Vocabulary Card Challenge!</h2>
+
+  <p id="skorGame">⭐ Score: 0</p>
+
+  <h3 id="pertanyaanGame">Find the correct card!</h3>
+
+  <div id="pilihanGame"
+       style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin:20px 0;">
+  </div>
+
+  <p id="pesanGame" aria-live="polite"></p>
+
+  <button type="button" onclick="kembaliKeTutor()">
+    ↩ Back to Learning
+  </button>
+
+</section>
+
+<footer> 
+<footer>
+        © Lumi Edu Fun English · Learn, Play, and Grow!
+    <button
+  id="tombolMusik"
+  type="button"
+  onclick="toggleMusik()"
+  style="
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    background: #18345B;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #0002;
+  "
+>
+  🎵 Nyalakan Musik
+</button>
+    </footer>
+    <audio id="musikLatar" src="assets/music-bg.mp3" loop preload="auto"></audio>
+    <script>
+    const materiKosakata = {
+    "Animals": [
+        { emoji: "🐶", word: "Dog", meaning: "Anjing" },
+        { emoji: "🐱", word: "Cat", meaning: "Kucing" },
+        { emoji: "🐟", word: "Fish", meaning: "Ikan" },
+        { emoji: "🐦", word: "Bird", meaning: "Burung" },
+        { emoji: "🐰", word: "Rabbit", meaning: "Kelinci" },
+        { emoji: "🐮", word: "Cow", meaning: "Sapi" },
+        { emoji: "🐴", word: "Horse", meaning: "Kuda" },
+        { emoji: "🦆", word: "Duck", meaning: "Bebek" },
+        { emoji: "🦁", word: "Lion", meaning: "Singa" },
+        { emoji: "🐘", word: "Elephant", meaning: "Gajah" }
+    ],
+
+    "Fruits": [
+        { emoji: "🍎", word: "Apple", meaning: "Apel" },
+        { emoji: "🍌", word: "Banana", meaning: "Pisang" },
+        { emoji: "🍊", word: "Orange", meaning: "Jeruk" },
+        { emoji: "🥭", word: "Mango", meaning: "Mangga" },
+        { emoji: "🍇", word: "Grape", meaning: "Anggur" },
+        { emoji: "🍉", word: "Watermelon", meaning: "Semangka" },
+        { emoji: "🍓", word: "Strawberry", meaning: "Stroberi" },
+        { emoji: "🍍", word: "Pineapple", meaning: "Nanas" },
+        { emoji: "🍈", word: "Papaya", meaning: "Pepaya" },
+        { emoji: "🍐", word: "Pear", meaning: "Pir" }
+    ],
+
+    "Colors": [
+        { emoji: "🔴", word: "Red", meaning: "Merah" },
+        { emoji: "🔵", word: "Blue", meaning: "Biru" },
+        { emoji: "🟡", word: "Yellow", meaning: "Kuning" },
+        { emoji: "🟢", word: "Green", meaning: "Hijau" },
+        { emoji: "⚫", word: "Black", meaning: "Hitam" },
+        { emoji: "⚪", word: "White", meaning: "Putih" },
+        { emoji: "🩷", word: "Pink", meaning: "Merah muda" },
+        { emoji: "🟣", word: "Purple", meaning: "Ungu" },
+        { emoji: "🟠", word: "Orange", meaning: "Jingga" },
+        { emoji: "🟤", word: "Brown", meaning: "Cokelat" }
+    ],
+
+    "Numbers": [
+        { emoji: "1️⃣", word: "One", meaning: "Satu" },
+        { emoji: "2️⃣", word: "Two", meaning: "Dua" },
+        { emoji: "3️⃣", word: "Three", meaning: "Tiga" },
+        { emoji: "4️⃣", word: "Four", meaning: "Empat" },
+        { emoji: "5️⃣", word: "Five", meaning: "Lima" },
+        { emoji: "6️⃣", word: "Six", meaning: "Enam" },
+        { emoji: "7️⃣", word: "Seven", meaning: "Tujuh" },
+        { emoji: "8️⃣", word: "Eight", meaning: "Delapan" },
+        { emoji: "9️⃣", word: "Nine", meaning: "Sembilan" },
+        { emoji: "🔟", word: "Ten", meaning: "Sepuluh" }
+    ],
+
+    "Body Parts": [
+        { emoji: "👀", word: "Eyes", meaning: "Mata" },
+        { emoji: "👃", word: "Nose", meaning: "Hidung" },
+        { emoji: "✋", word: "Hand", meaning: "Tangan" },
+        { emoji: "🗣️", word: "Head", meaning: "Kepala" },
+        { emoji: "👄", word: "Mouth", meaning: "Mulut" },
+        { emoji: "👂", word: "Ear", meaning: "Telinga" },
+        { emoji: "💪", word: "Arm", meaning: "Lengan" },
+        { emoji: "🦵", word: "Leg", meaning: "Kaki" },
+        { emoji: "🦶", word: "Foot", meaning: "Telapak kaki" },
+        { emoji: "💇", word: "Hair", meaning: "Rambut" }
+    ],
+
+    "Family": [
+        { emoji: "👩", word: "Mother", meaning: "Ibu" },
+        { emoji: "👨", word: "Father", meaning: "Ayah" },
+        { emoji: "👧", word: "Sister", meaning: "Saudara perempuan" },
+        { emoji: "👦", word: "Brother", meaning: "Saudara laki-laki" },
+        { emoji: "👶", word: "Baby", meaning: "Bayi" },
+        { emoji: "👵", word: "Grandmother", meaning: "Nenek" },
+        { emoji: "👴", word: "Grandfather", meaning: "Kakek" },
+        { emoji: "👨", word: "Uncle", meaning: "Paman" },
+        { emoji: "👩", word: "Aunt", meaning: "Bibi" },
+        { emoji: "🧒", word: "Cousin", meaning: "Sepupu" }
+    ],
+
+    "School Objects": [
+        { emoji: "📘", word: "Book", meaning: "Buku" },
+        { emoji: "✏️", word: "Pencil", meaning: "Pensil" },
+        { emoji: "🎒", word: "Bag", meaning: "Tas" },
+        { emoji: "🧽", word: "Eraser", meaning: "Penghapus" },
+        { emoji: "📏", word: "Ruler", meaning: "Penggaris" },
+        { emoji: "🖊️", word: "Pen", meaning: "Pulpen" },
+        { emoji: "🖍️", word: "Crayon", meaning: "Krayon" },
+        { emoji: "📓", word: "Notebook", meaning: "Buku catatan" },
+        { emoji: "✂️", word: "Scissors", meaning: "Gunting" },
+        { emoji: "🧴", word: "Glue", meaning: "Lem" }
+    ],
+
+    "Food and Drinks": [
+        { emoji: "🍞", word: "Bread", meaning: "Roti" },
+        { emoji: "🥛", word: "Milk", meaning: "Susu" },
+        { emoji: "🍚", word: "Rice", meaning: "Nasi" },
+        { emoji: "💧", word: "Water", meaning: "Air" },
+        { emoji: "🥚", word: "Egg", meaning: "Telur" },
+        { emoji: "🧀", word: "Cheese", meaning: "Keju" },
+        { emoji: "🧃", word: "Juice", meaning: "Jus" },
+        { emoji: "🎂", word: "Cake", meaning: "Kue" },
+        { emoji: "🍗", word: "Chicken", meaning: "Ayam" },
+        { emoji: "🍜", word: "Noodles", meaning: "Mi" }
+    ],
+
+    "Toys": [
+        { emoji: "⚽", word: "Ball", meaning: "Bola" },
+        { emoji: "🧸", word: "Teddy Bear", meaning: "Boneka beruang" },
+        { emoji: "🪁", word: "Kite", meaning: "Layang-layang" },
+        { emoji: "🎎", word: "Doll", meaning: "Boneka" },
+        { emoji: "🚗", word: "Toy Car", meaning: "Mobil mainan" },
+        { emoji: "🧱", word: "Blocks", meaning: "Balok mainan" },
+        { emoji: "🧩", word: "Puzzle", meaning: "Puzzle" },
+        { emoji: "🤖", word: "Robot", meaning: "Robot" },
+        { emoji: "🪀", word: "Yo-yo", meaning: "Yoyo" },
+        { emoji: "🚂", word: "Toy Train", meaning: "Kereta mainan" }
+    ],
+
+    "Things Around Us": [
+        { emoji: "🪑", word: "Chair", meaning: "Kursi" },
+        { emoji: "🪵", word: "Table", meaning: "Meja" },
+        { emoji: "🚪", word: "Door", meaning: "Pintu" },
+        { emoji: "🪟", word: "Window", meaning: "Jendela" },
+        { emoji: "🕒", word: "Clock", meaning: "Jam" },
+        { emoji: "🛏️", word: "Bed", meaning: "Tempat tidur" },
+        { emoji: "💡", word: "Lamp", meaning: "Lampu" },
+        { emoji: "☕", word: "Cup", meaning: "Cangkir" },
+        { emoji: "🍽️", word: "Plate", meaning: "Piring" },
+        { emoji: "🥄", word: "Spoon", meaning: "Sendok" }
+    ]
+};
+
+
+function pilihKategori(nama) {
+    const daftar = materiKosakata[nama];
+
+    if (!daftar) {document.getElementById("kategori").style.display = "none";
+document.getElementById("tutor").style.display = "block";
+        console.error("Kategori tidak ditemukan:", nama);
+        return;
+    }
+
+    kategoriAktif = nama;
+
+    document.getElementById("kategori").style.display = "none";
+    document.getElementById("tutor").style.display = "block";
+
+    const wadah = document.getElementById("kartuKosakata");
+
+    wadah.innerHTML = daftar.map(item => `
+        <div style="background:white; border-radius:18px; padding:18px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+            <div style="font-size:42px; margin-bottom:10px;">
+                ${item.emoji}
+            </div>
+            <h3 style="color:#18345B;">${item.word}</h3>
+            <button type="button"
+                onclick="ucapkanKosakata('${item.word}')"
+                style="background:#18345B; color:white; border:0; border-radius:12px; padding:10px 14px; cursor:pointer;">
+                🔊 Dengarkan
+            </button>
+        </div>
+    `).join("");
+
+    const pesan = document.getElementById("pesanAudio");
+    if (pesan) {
+        pesan.textContent = "Dengarkan, lalu coba ucapkan sendiri! 🎧";
+    }
+}
+function dengarkanTutor() {
+    if (!("speechSynthesis" in window)) {
+        document.getElementById("pesanAudio").textContent =
+            "Maaf, browser belum mendukung suara otomatis.";
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const inggris = new SpeechSynthesisUtterance(
+        "Hello, kids! Welcome to Lumi Edu Fun English! " +
+        "Today, we will learn " + kategoriAktif +
+        ". Listen and repeat. Let's learn together!"
+    );
+
+    inggris.lang = "en-US";
+    inggris.rate = 0.85;
+
+    const indonesia = new SpeechSynthesisUtterance(
+        "Halo anak-anak! Hari ini kita belajar " +
+        kategoriAktif +
+        ". Dengarkan kata Bahasa Inggrisnya, lalu tirukan ya. Semangat!"
+    );
+
+    indonesia.lang = "id-ID";
+    indonesia.rate = 0.9;
+
+    inggris.onend = function() {
+        window.speechSynthesis.speak(indonesia);
+    };
+
+    window.speechSynthesis.speak(inggris);
+
+    document.getElementById("pesanAudio").textContent =
+        "Tutor sedang berbicara. Yuk, dengarkan! 🎧";
+}
+
+function ucapkanKosakata(kata, arti) {
+    const pesan = document.getElementById("pesanAudio");
+
+    if (!("speechSynthesis" in window)) {
+        if (pesan) {
+            pesan.textContent = "Audio belum didukung browser ini.";
+        }
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const suara = new SpeechSynthesisUtterance(kata);
+    suara.lang = "en-US";
+    suara.rate = 0.8;
+    suara.pitch = 1.1;
+
+    suara.onstart = function () {
+        if (pesan) {
+            pesan.textContent = "Listen carefully: " + kata + "!";
+        }
+    };
+
+    suara.onend = function () {
+        if (pesan) {
+            pesan.textContent = "Your turn! Say it out loud! 🌟";
+        }
+    };
+
+    window.speechSynthesis.speak(suara);
+}
+
+function kembaliKeKategori() {
+    window.speechSynthesis.cancel();
+    document.getElementById("tutor").style.display = "none";
+    document.getElementById("kategori").style.display = "block";
+}
+
+function kembaliBeranda() {
+    window.speechSynthesis.cancel();
+    document.getElementById("kategori").style.display = "none";
+    document.getElementById("tutor").style.display = "none";
+    document.querySelector(".hero").style.display = "";
+}
+function mulaiBelajar() {
+    window.speechSynthesis.cancel();
+    document.querySelector(".hero").style.display = "none";
+    document.getElementById("kategori").style.display = "block";
+}
+   function toggleMusik() {
+  const musik = document.getElementById("musikLatar");
+  const tombol = document.getElementById("tombolMusik");
+
+  if (musik.paused) {
+    musik.volume = 0.15;
+    musik.play().then(() => {
+      tombol.textContent = "🔇 Matikan Musik";
+    }).catch(() => {
+      tombol.textContent = "🎵 Coba Putar Lagi";
+    });
+  } else {
+    musik.pause();
+    tombol.textContent = "🎵 Nyalakan Musik";
+  }
+} 
+  let skorVocabularyLumi = 0;
+let daftarSoalVocabularyLumi = [];
+let indexSoalVocabularyLumi = 0;
+let jawabanBenarVocabularyLumi = null;
+let opsiVocabularyLumi = [];
+
+function mulaiGame() {
+    const game = document.getElementById("game");
+    const tutor = document.getElementById("tutor");
+    const kategori = document.getElementById("kategori");
+    const materi = materiKosakata[kategoriAktif];
+
+    if (!Array.isArray(materi) || materi.length === 0) {
+        alert("Pilih kategori belajar terlebih dahulu!");
+        if (tutor) tutor.style.display = "none";
+        if (kategori) kategori.style.display = "block";
+        return;
+    }
+
+    if (tutor) tutor.style.display = "none";
+    if (kategori) kategori.style.display = "none";
+
+    game.style.display = "block";
+    skorVocabularyLumi = 0;
+    indexSoalVocabularyLumi = 0;
+
+    document.getElementById("skorGame").textContent =
+        "⭐ Score: 0";
+
+    daftarSoalVocabularyLumi =
+        [...materi].sort(() => Math.random() - 0.5);
+
+    tampilkanSoalVocabularyLumi();
+}
+
+function tampilkanSoalVocabularyLumi() {
+    const materi = materiKosakata[kategoriAktif];
+    const soal = daftarSoalVocabularyLumi[indexSoalVocabularyLumi];
+
+    jawabanBenarVocabularyLumi = soal;
+
+    document.getElementById("pertanyaanGame").textContent =
+        `What is "${soal.meaning}" in English?`;
+
+    document.getElementById("pesanGame").textContent = "";
+
+    opsiVocabularyLumi = [
+        soal,
+        ...materi
+            .filter(item => item.word !== soal.word)
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 3)
+    ].sort(() => Math.random() - 0.5);
+
+    const wadah = document.getElementById("pilihanGame");
+
+    wadah.innerHTML = opsiVocabularyLumi.map((item, i) => `
+        <button type="button"
+            onclick="jawabVocabularyLumi(${i})"
+            style="background:white;color:#18345B;
+            border:2px solid #E8EEFB;border-radius:14px;
+            padding:20px 12px;cursor:pointer;font-size:18px;">
+            ${item.emoji} ${item.word}
+        </button>
+    `).join("");
+}
+
+function jawabVocabularyLumi(index) {
+    const wadah = document.getElementById("pilihanGame");
+    const pesan = document.getElementById("pesanGame");
+
+    wadah.querySelectorAll("button").forEach(tombol => {
+        tombol.disabled = true;
+    });
+
+    if (opsiVocabularyLumi[index].word ===
+        jawabanBenarVocabularyLumi.word) {
+
+        skorVocabularyLumi++;
+        bunyiFeedbackLumi(true);
+        pesan.textContent = "🎉 Correct! Excellent job!";
+    } else { 
+    bunyiFeedbackLumi(false);
+
+        pesan.textContent =
+            "😊 The correct answer is " +
+            jawabanBenarVocabularyLumi.word + "!";
+    }
+
+    document.getElementById("skorGame").textContent =
+        "⭐ Score: " + skorVocabularyLumi;
+
+    const lanjut = document.createElement("button");
+
+    lanjut.type = "button";
+    lanjut.textContent =
+        indexSoalVocabularyLumi < daftarSoalVocabularyLumi.length - 1
+        ? "Next Question ➜"
+        : "See Results 🏆";
+
+    lanjut.style.cssText =
+        "grid-column:1/-1;background:#18345B;color:white;" +
+        "padding:14px;border:0;border-radius:12px;cursor:pointer;";
+
+    lanjut.onclick = lanjutSoalVocabularyLumi;
+    wadah.appendChild(lanjut);
+}
+
+function lanjutSoalVocabularyLumi() {
+    indexSoalVocabularyLumi++;
+
+    if (indexSoalVocabularyLumi < daftarSoalVocabularyLumi.length) {
+        tampilkanSoalVocabularyLumi();
+    } else {
+        document.getElementById("pertanyaanGame").textContent =
+            "🏆 Great Job! You Finished!";
+
+        document.getElementById("pesanGame").textContent =
+            `Your score: ${skorVocabularyLumi} / ${daftarSoalVocabularyLumi.length}`;
+
+        document.getElementById("pilihanGame").innerHTML = `
+  <div style="grid-column:1/-1; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+
+    <button type="button" onclick="mulaiGame()"
+      style="background:#F6C85F;color:#18345B;padding:14px 20px;border:0;border-radius:12px;cursor:pointer;font-weight:bold;">
+      🔄 Play Again
+    </button>
+
+    <button type="button" onclick="kembaliKeKategori()"
+      style="background:#E8EEFB;color:#18345B;padding:14px 20px;border:0;border-radius:12px;cursor:pointer;font-weight:bold;">
+      🏠 Back to Categories
+    </button>
+
+  </div>
+`;
+    }
+}
+
+function kembaliKeTutor() {
+    if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+    }
+
+    document.getElementById("game").style.display = "none";
+    document.getElementById("tutor").style.display = "block";
+}  
+
+function mulaiGame() {
+    const game = document.getElementById("game");
+    const tutor = document.getElementById("tutor");
+    const kategori = document.getElementById("kategori");
+    const materi = materiKosakata[kategoriAktif];
+
+    if (!Array.isArray(materi) || materi.length === 0) {
+        alert("Pilih kategori belajar terlebih dahulu!");
+        if (tutor) tutor.style.display = "none";
+        if (kategori) kategori.style.display = "block";
+        return;
+    }
+
+    if (tutor) tutor.style.display = "none";
+    if (kategori) kategori.style.display = "none";
+
+    game.style.display = "block";
+    skorVocabularyLumi = 0;
+    indexSoalVocabularyLumi = 0;
+
+    document.getElementById("skorGame").textContent =
+        "⭐ Score: 0";
+
+    daftarSoalVocabularyLumi =
+        [...materi].sort(() => Math.random() - 0.5);
+
+    tampilkanSoalVocabularyLumi();
+}
+
+function tampilkanSoalVocabularyLumi() {
+    const materi = materiKosakata[kategoriAktif];
+    const soal = daftarSoalVocabularyLumi[indexSoalVocabularyLumi];
+
+    jawabanBenarVocabularyLumi = soal;
+
+    document.getElementById("pertanyaanGame").textContent =
+        `What is "${soal.meaning}" in English?`;
+
+    document.getElementById("pesanGame").textContent = "";
+
+    opsiVocabularyLumi = [
+        soal,
+        ...materi
+            .filter(item => item.word !== soal.word)
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 3)
+    ].sort(() => Math.random() - 0.5);
+
+    const wadah = document.getElementById("pilihanGame");
+
+    wadah.innerHTML = opsiVocabularyLumi.map((item, i) => `
+        <button type="button"
+            onclick="jawabVocabularyLumi(${i})"
+            style="background:white;color:#18345B;
+            border:2px solid #E8EEFB;border-radius:14px;
+            padding:20px 12px;cursor:pointer;font-size:18px;">
+            ${item.emoji} ${item.word}
+        </button>
+    `).join("");
+}
+
+function jawabVocabularyLumi(index) {
+    const wadah = document.getElementById("pilihanGame");
+    const pesan = document.getElementById("pesanGame");
+
+    wadah.querySelectorAll("button").forEach(tombol => {
+        tombol.disabled = true;
+    });
+
+    if (opsiVocabularyLumi[index].word ===
+        jawabanBenarVocabularyLumi.word) {
+
+        skorVocabularyLumi++;
+        pesan.textContent = "🎉 Correct! Excellent job!";
+    } else {
+        pesan.textContent =
+            "😊 The correct answer is " +
+            jawabanBenarVocabularyLumi.word + "!";
+    }
+
+    document.getElementById("skorGame").textContent =
+        "⭐ Score: " + skorVocabularyLumi;
+
+    const lanjut = document.createElement("button");
+
+    lanjut.type = "button";
+    lanjut.textContent =
+        indexSoalVocabularyLumi < daftarSoalVocabularyLumi.length - 1
+        ? "Next Question ➜"
+        : "See Results 🏆";
+
+    lanjut.style.cssText =
+        "grid-column:1/-1;background:#18345B;color:white;" +
+        "padding:14px;border:0;border-radius:12px;cursor:pointer;";
+
+    lanjut.onclick = lanjutSoalVocabularyLumi;
+    wadah.appendChild(lanjut);
+}
+
+function lanjutSoalVocabularyLumi() {
+    indexSoalVocabularyLumi++;
+
+    if (indexSoalVocabularyLumi < daftarSoalVocabularyLumi.length) {
+        tampilkanSoalVocabularyLumi();
+    } else {
+        document.getElementById("pertanyaanGame").textContent =
+            "🏆 Great Job! You Finished!";
+
+        document.getElementById("pesanGame").textContent =
+            `Your score: ${skorVocabularyLumi} / ${daftarSoalVocabularyLumi.length}`;
+
+        document.getElementById("pilihanGame").innerHTML = `
+            <button type="button" onclick="mulaiGame()"
+                style="background:#F6C85F;color:#18345B;
+                padding:14px;border:0;border-radius:12px;
+                cursor:pointer;">
+                🔄 Play Again
+            </button>
+        `;
+    }
+}
+
+function kembaliKeTutor() {
+    if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+    }
+
+    document.getElementById("game").style.display = "none";
+    document.getElementById("tutor").style.display = "block";
+}
+function bunyiFeedbackLumi(benar) {
+  const AudioContextLumi =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContextLumi) return;
+
+  const audio = new AudioContextLumi();
+  const nada = benar ? [660, 880] : [260, 180];
+
+  nada.forEach((frekuensi, index) => {
+    const oscillator = audio.createOscillator();
+    const volume = audio.createGain();
+    const waktu = audio.currentTime + index * 0.13;
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(frekuensi, waktu);
+
+    volume.gain.setValueAtTime(0.001, waktu);
+    volume.gain.exponentialRampToValueAtTime(0.12, waktu + 0.02);
+    volume.gain.exponentialRampToValueAtTime(0.001, waktu + 0.12);
+
+    oscillator.connect(volume);
+    volume.connect(audio.destination);
+
+    oscillator.start(waktu);
+    oscillator.stop(waktu + 0.13);
+
+    if (index === nada.length - 1) {
+      oscillator.onended = () => audio.close();
+    }
+  });
+}
+</script>
+
+</body>
+
+</html>
